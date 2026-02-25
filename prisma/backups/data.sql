@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict Q74XClCgEvH92RfLYOiUqsFP2wvQZfoXaL9QKbblfN5lDY3LhmfyMUQQbAd7oW4
+-- \restrict 8p97FNNMdo9MQ4eLAKYnkvaxRbTVGgVnOI82fdqKkMqQouYi56DKqbQkQUNaCJw
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -201,6 +201,14 @@ COPY "auth"."audit_log_entries" ("instance_id", "id", "payload", "created_at", "
 00000000-0000-0000-0000-000000000000	65f93101-8ba5-4557-8f92-b986d0d84855	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-01-02 00:19:26.176396+00	
 00000000-0000-0000-0000-000000000000	1e131aac-2f58-4d2a-84f1-00a18f0bee3e	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-01-02 01:20:00.418987+00	
 00000000-0000-0000-0000-000000000000	6299ef37-5829-44f5-9bc2-447b0cf7c0fa	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-01-02 01:20:00.444849+00	
+\.
+
+
+--
+-- Data for Name: custom_oauth_providers; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+COPY "auth"."custom_oauth_providers" ("id", "provider_type", "identifier", "name", "client_id", "client_secret", "acceptable_client_ids", "scopes", "pkce_enabled", "attribute_mapping", "authorization_params", "enabled", "email_optional", "issuer", "discovery_url", "skip_nonce_check", "cached_discovery", "discovery_cached_at", "authorization_url", "token_url", "userinfo_url", "jwks_uri", "created_at", "updated_at") FROM stdin;
 \.
 
 
@@ -640,6 +648,6 @@ SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 90, true);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict Q74XClCgEvH92RfLYOiUqsFP2wvQZfoXaL9QKbblfN5lDY3LhmfyMUQQbAd7oW4
+-- \unrestrict 8p97FNNMdo9MQ4eLAKYnkvaxRbTVGgVnOI82fdqKkMqQouYi56DKqbQkQUNaCJw
 
 RESET ALL;
