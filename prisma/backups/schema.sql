@@ -67,13 +67,11 @@ CREATE OR REPLACE FUNCTION "public"."handle_new_user"() RETURNS "trigger"
     SET "search_path" TO 'public'
     AS $$
 BEGIN
-  -- Insert profile
   INSERT INTO public.profiles (user_id, email, role)
-  VALUES (NEW.id, NEW.email, 'admin');
+  VALUES (NEW.id, NEW.email, 'user');
   
-  -- Insert admin role
   INSERT INTO public.user_roles (user_id, role)
-  VALUES (NEW.id, 'admin');
+  VALUES (NEW.id, 'user');
   
   RETURN NEW;
 END;
