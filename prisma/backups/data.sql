@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict Cammqrk4bnKQObfgSaiEyaeYnocMjVi5lxR4rncXWyCcAvx9u9yiurJ2qb8Kko8
+-- \restrict y07lkTNaWP96CsxdMmU3nzxUeJXmtbbpfN6fr6FEMAua165nMBqa19BhX2yK7b9
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -633,7 +633,7 @@ b5234f15-d15d-40ee-8298-6a12a5b2159b	game-files	f18e0c6c-aee7-47b6-8fb7-6e5ff560
 -- Data for Name: s3_multipart_uploads; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
 --
 
-COPY "storage"."s3_multipart_uploads" ("id", "in_progress_size", "upload_signature", "bucket_id", "key", "version", "owner_id", "created_at", "user_metadata") FROM stdin;
+COPY "storage"."s3_multipart_uploads" ("id", "in_progress_size", "upload_signature", "bucket_id", "key", "version", "owner_id", "created_at", "user_metadata", "metadata") FROM stdin;
 \.
 
 
@@ -664,6 +664,6 @@ SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 90, true);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict Cammqrk4bnKQObfgSaiEyaeYnocMjVi5lxR4rncXWyCcAvx9u9yiurJ2qb8Kko8
+-- \unrestrict y07lkTNaWP96CsxdMmU3nzxUeJXmtbbpfN6fr6FEMAua165nMBqa19BhX2yK7b9
 
 RESET ALL;
