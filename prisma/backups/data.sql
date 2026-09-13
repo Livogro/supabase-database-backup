@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict BVeYPDKE4FTkDAb8xaXcVW3mELe3kVMRlqtwbMzALWKRMaBj40ASarfURWdGaaO
+-- \restrict OQCbXBmFjEgGfbH4ehGwRK7ahpfK18eQNKmXdo1BzCkKpNpjwWbpJ7aZjfNn1dn
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -201,6 +201,16 @@ COPY "auth"."audit_log_entries" ("instance_id", "id", "payload", "created_at", "
 00000000-0000-0000-0000-000000000000	65f93101-8ba5-4557-8f92-b986d0d84855	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-01-02 00:19:26.176396+00	
 00000000-0000-0000-0000-000000000000	1e131aac-2f58-4d2a-84f1-00a18f0bee3e	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-01-02 01:20:00.418987+00	
 00000000-0000-0000-0000-000000000000	6299ef37-5829-44f5-9bc2-447b0cf7c0fa	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-01-02 01:20:00.444849+00	
+00000000-0000-0000-0000-000000000000	93b74f36-10c0-48cd-ab40-d7b5ee598c05	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 07:49:37.650305+00	
+00000000-0000-0000-0000-000000000000	2980d09c-fd1c-48c7-b155-cad7e30ea5eb	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 07:49:37.660374+00	
+00000000-0000-0000-0000-000000000000	b4830fc7-0cf0-443c-9a64-73ddce41a7ca	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 08:49:24.062788+00	
+00000000-0000-0000-0000-000000000000	9223eb27-e7a1-4c8d-a926-26cf02140706	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 08:49:24.072359+00	
+00000000-0000-0000-0000-000000000000	f34aee0c-e936-463d-be17-0276593c387a	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 08:51:53.846283+00	
+00000000-0000-0000-0000-000000000000	12c8707f-f6eb-4563-8afe-cf9c616f3af9	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 08:51:53.847384+00	
+00000000-0000-0000-0000-000000000000	c75c5879-685d-4c51-9ae6-e93f68a2d310	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 10:00:10.950502+00	
+00000000-0000-0000-0000-000000000000	a0f6507f-1f3a-463f-87c8-7e96a5fa83e9	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 10:00:10.969815+00	
+00000000-0000-0000-0000-000000000000	1b27c8a7-dec8-4919-ae76-41c8e603a1bf	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 15:40:38.86426+00	
+00000000-0000-0000-0000-000000000000	beb4ad73-f057-4823-b5eb-ab251385446a	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-12 15:40:38.884851+00	
 \.
 
 
@@ -225,7 +235,7 @@ COPY "auth"."flow_state" ("id", "user_id", "auth_code", "code_challenge_method",
 --
 
 COPY "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") FROM stdin;
-00000000-0000-0000-0000-000000000000	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	authenticated	authenticated	titasss4@gmail.com	$2a$10$IFpL2qraCr20yVXXcO5JLe3tw2byH5unGIbUKb/DONMyC.uXbunz6	2025-10-03 22:03:47.214876+00	\N		\N		\N			\N	2025-12-10 09:13:47.591512+00	{"provider": "email", "providers": ["email"]}	{"email_verified": true}	\N	2025-10-03 22:03:47.143765+00	2026-01-02 01:20:00.480988+00	\N	\N			\N		0	\N		\N	f	\N	f
+00000000-0000-0000-0000-000000000000	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	authenticated	authenticated	titasss4@gmail.com	$2a$10$IFpL2qraCr20yVXXcO5JLe3tw2byH5unGIbUKb/DONMyC.uXbunz6	2025-10-03 22:03:47.214876+00	\N		\N		\N			\N	2025-12-10 09:13:47.591512+00	{"provider": "email", "providers": ["email"]}	{"email_verified": true}	\N	2025-10-03 22:03:47.143765+00	2026-09-12 15:40:38.897872+00	\N	\N			\N		0	\N		\N	f	\N	f
 \.
 
 
@@ -261,8 +271,8 @@ COPY "auth"."oauth_clients" ("id", "client_secret_hash", "registration_type", "r
 COPY "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag", "oauth_client_id", "refresh_token_hmac_key", "refresh_token_counter", "scopes") FROM stdin;
 7c54a82d-c6e4-47e1-9eab-1e6896a64c75	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:42.985425+00	2025-12-09 18:40:22.346443+00	\N	aal1	\N	2025-12-09 18:40:22.346331	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
 a3945cee-9d10-48db-8979-ef3111fba513	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 09:13:47.592206+00	2025-12-10 09:13:47.592206+00	\N	aal1	\N	\N	Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
-e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 00:29:23.189307+00	2026-01-02 00:19:26.202671+00	\N	aal1	\N	2026-01-02 00:19:26.202567	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
-e8148c67-4637-43db-b31e-453b3c566b1a	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:35.362462+00	2026-01-02 01:20:00.490267+00	\N	aal1	\N	2026-01-02 01:20:00.488986	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
+e8148c67-4637-43db-b31e-453b3c566b1a	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:35.362462+00	2026-09-12 08:51:53.852356+00	\N	aal1	\N	2026-09-12 08:51:53.852267	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36	188.69.59.141	\N	\N	\N	\N	\N
+e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 00:29:23.189307+00	2026-09-12 15:40:38.907015+00	\N	aal1	\N	2026-09-12 15:40:38.906909	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36	188.69.59.141	\N	\N	\N	\N	\N
 \.
 
 
@@ -359,9 +369,14 @@ COPY "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked"
 00000000-0000-0000-0000-000000000000	86	cb55x3nnmxs4	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2025-12-26 13:17:00.979156+00	2025-12-28 22:47:30.959054+00	gtntgtbsgjzn	e8148c67-4637-43db-b31e-453b3c566b1a
 00000000-0000-0000-0000-000000000000	87	aw2rw4wewp47	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2025-12-28 22:47:30.979597+00	2026-01-01 23:24:04.58674+00	cb55x3nnmxs4	e8148c67-4637-43db-b31e-453b3c566b1a
 00000000-0000-0000-0000-000000000000	71	h7uhb74p7ssg	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2025-12-10 00:29:23.200922+00	2026-01-02 00:19:26.180176+00	\N	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
-00000000-0000-0000-0000-000000000000	89	vgz64mxudpep	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-01-02 00:19:26.190459+00	2026-01-02 00:19:26.190459+00	h7uhb74p7ssg	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 00000000-0000-0000-0000-000000000000	88	f4n36pkp3pv7	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-01-01 23:24:04.613401+00	2026-01-02 01:20:00.445583+00	aw2rw4wewp47	e8148c67-4637-43db-b31e-453b3c566b1a
-00000000-0000-0000-0000-000000000000	90	xnl626vtgpq2	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-01-02 01:20:00.470089+00	2026-01-02 01:20:00.470089+00	f4n36pkp3pv7	e8148c67-4637-43db-b31e-453b3c566b1a
+00000000-0000-0000-0000-000000000000	89	vgz64mxudpep	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-01-02 00:19:26.190459+00	2026-09-12 07:49:37.662294+00	h7uhb74p7ssg	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	91	ur7pofuzueqf	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-12 07:49:37.676542+00	2026-09-12 08:49:24.072987+00	vgz64mxudpep	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	90	xnl626vtgpq2	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-01-02 01:20:00.470089+00	2026-09-12 08:51:53.848789+00	f4n36pkp3pv7	e8148c67-4637-43db-b31e-453b3c566b1a
+00000000-0000-0000-0000-000000000000	93	otqjayjn7frh	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-09-12 08:51:53.849518+00	2026-09-12 08:51:53.849518+00	xnl626vtgpq2	e8148c67-4637-43db-b31e-453b3c566b1a
+00000000-0000-0000-0000-000000000000	92	24oirot4n2g5	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-12 08:49:24.08111+00	2026-09-12 10:00:10.97057+00	ur7pofuzueqf	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	94	ro6dp2nqxrik	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-12 10:00:10.989152+00	2026-09-12 15:40:38.885736+00	24oirot4n2g5	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	95	2wwczkshf33u	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-09-12 15:40:38.893741+00	2026-09-12 15:40:38.893741+00	ro6dp2nqxrik	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 \.
 
 
@@ -449,6 +464,7 @@ a2508dee-39f7-40f5-932f-8b571938dce3	Katytė	Spalvink mielos katytės paveikslė
 
 COPY "public"."contact_submissions" ("id", "name", "email", "message", "status", "created_at", "updated_at") FROM stdin;
 287dddcd-021f-44c5-afc7-707fdc3b1e09	Titas Gegeckas	Titasss4@gmail.com	ddsd	replied	2025-10-06 00:05:32.534893+00	2025-12-15 00:14:37.563032+00
+38a62911-0466-477e-9886-964b1640ffc8	Titas Gegeckas	titasss4@gmail.com	Kaip jūs?	replied	2026-09-12 08:05:38.711385+00	2026-09-12 08:21:52.524565+00
 \.
 
 
@@ -481,6 +497,15 @@ COPY "public"."giveaways" ("id", "created_at", "updated_at", "title", "descripti
 
 
 --
+-- Data for Name: maintenance_config; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."maintenance_config" ("id", "bypass_key", "created_at", "updated_at") FROM stdin;
+9db59bd5-561d-4c99-87b1-4f43eb973c20	admin2025	2026-09-12 08:39:04.615849+00	2026-09-12 08:39:04.615849+00
+\.
+
+
+--
 -- Data for Name: profiles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -493,8 +518,8 @@ a14d48ca-acb2-4ba1-b5dd-ac439fd294b3	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	titass
 -- Data for Name: site_settings; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY "public"."site_settings" ("id", "created_at", "updated_at", "logo_url", "site_title", "hero_description", "latest_section_title", "latest_section_description", "features_section_title", "features_section_description", "feature_1_title", "feature_1_description", "feature_2_title", "feature_2_description", "feature_3_title", "feature_3_description", "cta_section_title", "cta_section_description", "about_hero_title", "about_hero_description", "about_mission_title", "about_mission_description", "about_content_title", "about_content_description", "hero_bg_url", "hero_logo_url", "footer_brand_text", "footer_description", "footer_links_title", "footer_social_title", "footer_social_description", "footer_youtube_url", "footer_instagram_url", "footer_facebook_url", "footer_email", "footer_copyright", "maintenance_enabled", "maintenance_title", "maintenance_description", "maintenance_bypass_key") FROM stdin;
-67c9b764-70d8-4703-be41-744858f41e2b	2025-10-06 00:07:38.747632+00	2025-12-10 00:29:27.564691+00	https://esgugkuwfylwgyfpfodn.supabase.co/storage/v1/object/public/colouring-pages/logo_url-1759949999994.png	Smalsučių Pasaulis	 	Naujausi 	Naujausios Dainelės ir Spalvinmo Lapai!	Kas mus daro Išskirtiniais?	Atraskite, kodėl vaikai ir tėveliai taip mėgsta mūsų turinį!	Mokomosios Dainelės	Linksmos ir lavinančios dainelės, kurios padeda vaikams mokytis per muziką – su įsimenančiomis melodijomis ir prasmingais žodžiais.	Kūrybinės Veiklos	Nemokami atsisiunčiami spalvinimo lapai, skatinantys kūrybiškumą ir suteikiantys įdomaus laiko be ekranų.	Šeimai Draugiškas Turinys	Saugus, amžiui tinkamas turinys, vienijantis šeimas ir kuriantis gražius prisiminimus kartu.	Prisijunk prie linksmybių!	Prenumeruok mūsų YouTube kanalą ir nepraleisk naujų dainelių bei veiklų. Sek mus socialiniuose tinkluose ir likime drauge!	Prisijunk prie linksmybių!	Prenumeruok mūsų YouTube kanalą ir nepraleisk naujų dainelių bei veiklų. Sek mus socialiniuose tinkluose ir likime drauge!	Our Mission	We believe in the power of creativity and music to inspire young minds. Our mission is to provide high-quality, educational entertainment that sparks imagination and brings families together.	What We Offer	From catchy educational songs to beautiful colouring pages, we create content that children love and parents trust.	https://esgugkuwfylwgyfpfodn.supabase.co/storage/v1/object/public/colouring-pages/hero_bg_url-1759949831836.png	https://esgugkuwfylwgyfpfodn.supabase.co/storage/v1/object/public/colouring-pages/hero_logo_url-1759876006127.png	Vaikų YouTube kanalas	Smagios dainos, mokomieji žaidimai bei spalvinimo lapai vaikams. Edukacinė pramoga, skatinanti kūrybiškumą ir džiaugsmą.	Greitos nuorodos	Sekite mus	Prenumeruokite mūsų YouTube kanalą naujoms dainoms ir veikloms!	https://youtube.com/@smalsuciupasaulis	https://instagram.com/smalsuciu	https://facebook.com/smalsuciu	contact@smalsuciu.com	© 2025 Smalsučių Pasaulis. Visos teisės saugomos. Sukurta su ❤️ vaikams.	t	Svetainė atnaujinama	Šiuo metu atliekami techniniai darbai. Greitai grįšime!	admin2025
+COPY "public"."site_settings" ("id", "created_at", "updated_at", "logo_url", "site_title", "hero_description", "latest_section_title", "latest_section_description", "features_section_title", "features_section_description", "feature_1_title", "feature_1_description", "feature_2_title", "feature_2_description", "feature_3_title", "feature_3_description", "cta_section_title", "cta_section_description", "about_hero_title", "about_hero_description", "about_mission_title", "about_mission_description", "about_content_title", "about_content_description", "hero_bg_url", "hero_logo_url", "footer_brand_text", "footer_description", "footer_links_title", "footer_social_title", "footer_social_description", "footer_youtube_url", "footer_instagram_url", "footer_facebook_url", "footer_email", "footer_copyright", "maintenance_enabled", "maintenance_title", "maintenance_description") FROM stdin;
+67c9b764-70d8-4703-be41-744858f41e2b	2025-10-06 00:07:38.747632+00	2026-09-12 08:27:46.43581+00	https://esgugkuwfylwgyfpfodn.supabase.co/storage/v1/object/public/colouring-pages/logo_url-1759949999994.png	Smalsučių Pasaulis	 	Naujausi 	Naujausios Dainelės ir Spalvinmo Lapai!	Kas mus daro Išskirtiniais?	Atraskite, kodėl vaikai ir tėveliai taip mėgsta mūsų turinį!	Mokomosios Dainelės	Linksmos ir lavinančios dainelės, kurios padeda vaikams mokytis per muziką – su įsimenančiomis melodijomis ir prasmingais žodžiais.	Kūrybinės Veiklos	Nemokami atsisiunčiami spalvinimo lapai, skatinantys kūrybiškumą ir suteikiantys įdomaus laiko be ekranų.	Šeimai Draugiškas Turinys	Saugus, amžiui tinkamas turinys, vienijantis šeimas ir kuriantis gražius prisiminimus kartu.	Prisijunk prie linksmybių!	Prenumeruok mūsų YouTube kanalą ir nepraleisk naujų dainelių bei veiklų. Sek mus socialiniuose tinkluose ir likime drauge!	Prisijunk prie linksmybių!	Prenumeruok mūsų YouTube kanalą ir nepraleisk naujų dainelių bei veiklų. Sek mus socialiniuose tinkluose ir likime drauge!	Our Mission	We believe in the power of creativity and music to inspire young minds. Our mission is to provide high-quality, educational entertainment that sparks imagination and brings families together.	What We Offer	From catchy educational songs to beautiful colouring pages, we create content that children love and parents trust.	https://esgugkuwfylwgyfpfodn.supabase.co/storage/v1/object/public/colouring-pages/hero_bg_url-1759949831836.png	https://esgugkuwfylwgyfpfodn.supabase.co/storage/v1/object/public/colouring-pages/hero_logo_url-1759876006127.png	Vaikų YouTube kanalas	Smagios dainos, mokomieji žaidimai bei spalvinimo lapai vaikams. Edukacinė pramoga, skatinanti kūrybiškumą ir džiaugsmą.	Greitos nuorodos	Sekite mus	Prenumeruokite mūsų YouTube kanalą naujoms dainoms ir veikloms!	https://youtube.com/@smalsuciupasaulis	https://instagram.com/smalsuciu	https://facebook.com/smalsuciu	contact@smalsuciu.com	© 2025 Smalsučių Pasaulis. Visos teisės saugomos. Sukurta su ❤️ vaikams.	t	Svetainė kuriama	Norite susisiekti? Užpildykite šią formą.
 \.
 
 
@@ -657,13 +682,13 @@ COPY "storage"."vector_indexes" ("id", "name", "bucket_id", "data_type", "dimens
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 90, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 95, true);
 
 
 --
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict BVeYPDKE4FTkDAb8xaXcVW3mELe3kVMRlqtwbMzALWKRMaBj40ASarfURWdGaaO
+-- \unrestrict OQCbXBmFjEgGfbH4ehGwRK7ahpfK18eQNKmXdo1BzCkKpNpjwWbpJ7aZjfNn1dn
 
 RESET ALL;

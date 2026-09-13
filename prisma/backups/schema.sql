@@ -201,6 +201,17 @@ CREATE TABLE IF NOT EXISTS "public"."giveaways" (
 ALTER TABLE "public"."giveaways" OWNER TO "postgres";
 
 
+CREATE TABLE IF NOT EXISTS "public"."maintenance_config" (
+    "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
+    "bypass_key" "text" NOT NULL,
+    "created_at" timestamp with time zone DEFAULT "now"() NOT NULL,
+    "updated_at" timestamp with time zone DEFAULT "now"() NOT NULL
+);
+
+
+ALTER TABLE "public"."maintenance_config" OWNER TO "postgres";
+
+
 CREATE TABLE IF NOT EXISTS "public"."profiles" (
     "id" "uuid" DEFAULT "gen_random_uuid"() NOT NULL,
     "user_id" "uuid" NOT NULL,
@@ -253,8 +264,7 @@ CREATE TABLE IF NOT EXISTS "public"."site_settings" (
     "footer_copyright" "text" DEFAULT '© 2024 Smalsučių Pasaulis. Visos teisės saugomos. Sukurta su ❤️ vaikams.'::"text" NOT NULL,
     "maintenance_enabled" boolean DEFAULT false NOT NULL,
     "maintenance_title" "text" DEFAULT 'Svetainė atnaujinama'::"text" NOT NULL,
-    "maintenance_description" "text" DEFAULT 'Šiuo metu atliekami techniniai darbai. Greitai grįšime!'::"text" NOT NULL,
-    "maintenance_bypass_key" "text" DEFAULT 'admin-access-2024'::"text" NOT NULL
+    "maintenance_description" "text" DEFAULT 'Šiuo metu atliekami techniniai darbai. Greitai grįšime!'::"text" NOT NULL
 );
 
 
@@ -335,6 +345,11 @@ ALTER TABLE ONLY "public"."games"
 
 ALTER TABLE ONLY "public"."giveaways"
     ADD CONSTRAINT "giveaways_pkey" PRIMARY KEY ("id");
+
+
+
+ALTER TABLE ONLY "public"."maintenance_config"
+    ADD CONSTRAINT "maintenance_config_pkey" PRIMARY KEY ("id");
 
 
 
@@ -630,11 +645,19 @@ CREATE POLICY "Only admins can update contact submissions" ON "public"."contact_
 
 
 
+CREATE POLICY "Only admins can update maintenance config" ON "public"."maintenance_config" FOR UPDATE TO "authenticated" USING ("public"."has_role"(( SELECT "auth"."uid"() AS "uid"), 'admin'::"public"."app_role")) WITH CHECK ("public"."has_role"(( SELECT "auth"."uid"() AS "uid"), 'admin'::"public"."app_role"));
+
+
+
 CREATE POLICY "Only admins can update roles" ON "public"."user_roles" FOR UPDATE USING ("public"."has_role"(( SELECT "auth"."uid"() AS "uid"), 'admin'::"public"."app_role"));
 
 
 
 CREATE POLICY "Only admins can view contact submissions" ON "public"."contact_submissions" FOR SELECT USING ("public"."has_role"(( SELECT "auth"."uid"() AS "uid"), 'admin'::"public"."app_role"));
+
+
+
+CREATE POLICY "Only admins can view maintenance config" ON "public"."maintenance_config" FOR SELECT TO "authenticated" USING ("public"."has_role"(( SELECT "auth"."uid"() AS "uid"), 'admin'::"public"."app_role"));
 
 
 
@@ -658,6 +681,9 @@ ALTER TABLE "public"."games" ENABLE ROW LEVEL SECURITY;
 
 
 ALTER TABLE "public"."giveaways" ENABLE ROW LEVEL SECURITY;
+
+
+ALTER TABLE "public"."maintenance_config" ENABLE ROW LEVEL SECURITY;
 
 
 ALTER TABLE "public"."profiles" ENABLE ROW LEVEL SECURITY;
@@ -837,13 +863,12 @@ GRANT USAGE ON SCHEMA "public" TO "service_role";
 
 
 
-GRANT ALL ON FUNCTION "public"."handle_new_user"() TO "anon";
-GRANT ALL ON FUNCTION "public"."handle_new_user"() TO "authenticated";
+REVOKE ALL ON FUNCTION "public"."handle_new_user"() FROM PUBLIC;
 GRANT ALL ON FUNCTION "public"."handle_new_user"() TO "service_role";
 
 
 
-GRANT ALL ON FUNCTION "public"."has_role"("_user_id" "uuid", "_role" "public"."app_role") TO "anon";
+REVOKE ALL ON FUNCTION "public"."has_role"("_user_id" "uuid", "_role" "public"."app_role") FROM PUBLIC;
 GRANT ALL ON FUNCTION "public"."has_role"("_user_id" "uuid", "_role" "public"."app_role") TO "authenticated";
 GRANT ALL ON FUNCTION "public"."has_role"("_user_id" "uuid", "_role" "public"."app_role") TO "service_role";
 
@@ -903,6 +928,12 @@ GRANT ALL ON TABLE "public"."games" TO "service_role";
 GRANT ALL ON TABLE "public"."giveaways" TO "anon";
 GRANT ALL ON TABLE "public"."giveaways" TO "authenticated";
 GRANT ALL ON TABLE "public"."giveaways" TO "service_role";
+
+
+
+GRANT ALL ON TABLE "public"."maintenance_config" TO "anon";
+GRANT ALL ON TABLE "public"."maintenance_config" TO "authenticated";
+GRANT ALL ON TABLE "public"."maintenance_config" TO "service_role";
 
 
 
