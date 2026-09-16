@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict m48FAaf8xSqQeDWfB9cdIUHvfQ6jjnYbGcMhlZ5h6ttYBUUrjdngm9kIhXigbIb
+-- \restrict H3vp8gTfd8Do5vYeeYXkbK4rqLiy0qfCcRJlY3Lxr9cL79AlHKFuyUZijL1LlXP
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -221,6 +221,8 @@ COPY "auth"."audit_log_entries" ("instance_id", "id", "payload", "created_at", "
 00000000-0000-0000-0000-000000000000	330091c0-a368-45ed-b910-5207d979a78e	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-14 23:58:25.324834+00	
 00000000-0000-0000-0000-000000000000	102b88f4-0043-44c9-8c24-4b6239605a0e	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-15 05:37:50.079708+00	
 00000000-0000-0000-0000-000000000000	5f89dffc-7159-4bf3-9127-c42b3902758a	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-15 05:37:50.093867+00	
+00000000-0000-0000-0000-000000000000	f2af37af-fbe8-43d2-a25f-e5ac685aafea	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-16 04:29:01.292557+00	
+00000000-0000-0000-0000-000000000000	f9e914a5-b848-4d0e-a7cb-0d9d62e76d03	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-09-16 04:29:01.315806+00	
 \.
 
 
@@ -245,7 +247,7 @@ COPY "auth"."flow_state" ("id", "user_id", "auth_code", "code_challenge_method",
 --
 
 COPY "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") FROM stdin;
-00000000-0000-0000-0000-000000000000	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	authenticated	authenticated	titasss4@gmail.com	$2a$10$IFpL2qraCr20yVXXcO5JLe3tw2byH5unGIbUKb/DONMyC.uXbunz6	2025-10-03 22:03:47.214876+00	\N		\N		\N			\N	2025-12-10 09:13:47.591512+00	{"provider": "email", "providers": ["email"]}	{"email_verified": true}	\N	2025-10-03 22:03:47.143765+00	2026-09-15 05:37:50.109783+00	\N	\N			\N		0	\N		\N	f	\N	f
+00000000-0000-0000-0000-000000000000	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	authenticated	authenticated	titasss4@gmail.com	$2a$10$IFpL2qraCr20yVXXcO5JLe3tw2byH5unGIbUKb/DONMyC.uXbunz6	2025-10-03 22:03:47.214876+00	\N		\N		\N			\N	2025-12-10 09:13:47.591512+00	{"provider": "email", "providers": ["email"]}	{"email_verified": true}	\N	2025-10-03 22:03:47.143765+00	2026-09-16 04:29:01.357712+00	\N	\N			\N		0	\N		\N	f	\N	f
 \.
 
 
@@ -280,7 +282,7 @@ COPY "auth"."oauth_clients" ("id", "client_secret_hash", "registration_type", "r
 
 COPY "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag", "oauth_client_id", "refresh_token_hmac_key", "refresh_token_counter", "scopes") FROM stdin;
 7c54a82d-c6e4-47e1-9eab-1e6896a64c75	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:42.985425+00	2025-12-09 18:40:22.346443+00	\N	aal1	\N	2025-12-09 18:40:22.346331	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
-e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 00:29:23.189307+00	2026-09-15 05:37:50.117963+00	\N	aal1	\N	2026-09-15 05:37:50.117364	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36	188.69.59.141	\N	\N	\N	\N	\N
+e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 00:29:23.189307+00	2026-09-16 04:29:01.372354+00	\N	aal1	\N	2026-09-16 04:29:01.372241	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36	188.69.59.141	\N	\N	\N	\N	\N
 a3945cee-9d10-48db-8979-ef3111fba513	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 09:13:47.592206+00	2025-12-10 09:13:47.592206+00	\N	aal1	\N	\N	Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
 e8148c67-4637-43db-b31e-453b3c566b1a	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:35.362462+00	2026-09-12 08:51:53.852356+00	\N	aal1	\N	2026-09-12 08:51:53.852267	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36	188.69.59.141	\N	\N	\N	\N	\N
 \.
@@ -315,6 +317,22 @@ COPY "auth"."mfa_challenges" ("id", "factor_id", "created_at", "verified_at", "i
 
 
 --
+-- Data for Name: mfa_recovery_code_sets; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+COPY "auth"."mfa_recovery_code_sets" ("id", "user_id", "mfa_factor_id", "failed_verification_count", "verification_locked_until", "created_at", "updated_at") FROM stdin;
+\.
+
+
+--
+-- Data for Name: mfa_recovery_codes; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+COPY "auth"."mfa_recovery_codes" ("id", "mfa_recovery_code_set_id", "code_hash", "consumed_at", "created_at") FROM stdin;
+\.
+
+
+--
 -- Data for Name: oauth_authorizations; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
@@ -342,7 +360,7 @@ COPY "auth"."oauth_consents" ("id", "user_id", "client_id", "scopes", "granted_a
 -- Data for Name: one_time_tokens; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-COPY "auth"."one_time_tokens" ("id", "user_id", "token_type", "token_hash", "relates_to", "created_at", "updated_at") FROM stdin;
+COPY "auth"."one_time_tokens" ("id", "user_id", "token_type", "token_hash", "relates_to", "created_at", "updated_at", "expires_at") FROM stdin;
 \.
 
 
@@ -391,7 +409,8 @@ COPY "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked"
 00000000-0000-0000-0000-000000000000	97	qwxu2jhwwd2c	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-14 07:06:56.289708+00	2026-09-14 15:40:06.413806+00	edibbh77w45c	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 00000000-0000-0000-0000-000000000000	98	ysogceibjrsu	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-14 15:40:06.424704+00	2026-09-14 23:58:25.32551+00	qwxu2jhwwd2c	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 00000000-0000-0000-0000-000000000000	99	ogxl3sickele	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-14 23:58:25.347321+00	2026-09-15 05:37:50.094569+00	ysogceibjrsu	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
-00000000-0000-0000-0000-000000000000	100	mjmdc4bllwp5	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-09-15 05:37:50.106691+00	2026-09-15 05:37:50.106691+00	ogxl3sickele	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	100	mjmdc4bllwp5	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-15 05:37:50.106691+00	2026-09-16 04:29:01.319736+00	ogxl3sickele	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	101	afer63c5be2i	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-09-16 04:29:01.347013+00	2026-09-16 04:29:01.347013+00	mjmdc4bllwp5	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 \.
 
 
@@ -416,6 +435,22 @@ COPY "auth"."saml_providers" ("id", "sso_provider_id", "entity_id", "metadata_xm
 --
 
 COPY "auth"."saml_relay_states" ("id", "sso_provider_id", "request_id", "for_email", "redirect_to", "created_at", "updated_at", "flow_state_id") FROM stdin;
+\.
+
+
+--
+-- Data for Name: scim_tokens; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+COPY "auth"."scim_tokens" ("id", "sso_provider_id", "token_hash", "prefix", "created_at", "expires_at", "revoked_at", "last_used_at") FROM stdin;
+\.
+
+
+--
+-- Data for Name: scim_users; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+COPY "auth"."scim_users" ("id", "sso_provider_id", "user_id", "resource", "created_at", "updated_at", "deleted_at") FROM stdin;
 \.
 
 
@@ -697,13 +732,13 @@ COPY "storage"."vector_indexes" ("id", "name", "bucket_id", "data_type", "dimens
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 100, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 101, true);
 
 
 --
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict m48FAaf8xSqQeDWfB9cdIUHvfQ6jjnYbGcMhlZ5h6ttYBUUrjdngm9kIhXigbIb
+-- \unrestrict H3vp8gTfd8Do5vYeeYXkbK4rqLiy0qfCcRJlY3Lxr9cL79AlHKFuyUZijL1LlXP
 
 RESET ALL;
