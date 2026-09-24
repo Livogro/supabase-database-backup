@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict QRXk6JlpGxlWQed2WNQQengSEIkHAqJJHB09zhY81TZczrxECCo0H00vaT19lJq
+-- \restrict dlGxm5vhPkgsazZBd0I1hMfJLiJbZvNGgS4POqUoEcBFTQ1NKY0GaOSnecF3ziy
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -624,9 +624,9 @@ COPY "public"."user_roles" ("id", "user_id", "role", "created_at") FROM stdin;
 -- Data for Name: buckets; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
 --
 
-COPY "storage"."buckets" ("id", "name", "owner", "created_at", "updated_at", "public", "avif_autodetection", "file_size_limit", "allowed_mime_types", "owner_id", "type", "versioning_status") FROM stdin;
-colouring-pages	colouring-pages	\N	2025-09-19 10:52:31.851363+00	2025-09-19 10:52:31.851363+00	t	f	\N	\N	\N	STANDARD	DISABLED
-game-files	game-files	\N	2025-12-04 22:34:59.459986+00	2025-12-04 22:34:59.459986+00	t	f	\N	\N	\N	STANDARD	DISABLED
+COPY "storage"."buckets" ("id", "name", "owner", "created_at", "updated_at", "public", "avif_autodetection", "file_size_limit", "allowed_mime_types", "owner_id", "type", "versioning_status", "lifecycle_configuration", "lifecycle_configuration_generation") FROM stdin;
+colouring-pages	colouring-pages	\N	2025-09-19 10:52:31.851363+00	2025-09-19 10:52:31.851363+00	t	f	\N	\N	\N	STANDARD	DISABLED	\N	\N
+game-files	game-files	\N	2025-12-04 22:34:59.459986+00	2025-12-04 22:34:59.459986+00	t	f	\N	\N	\N	STANDARD	DISABLED	\N	\N
 \.
 
 
@@ -742,6 +742,6 @@ SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 102, true);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict QRXk6JlpGxlWQed2WNQQengSEIkHAqJJHB09zhY81TZczrxECCo0H00vaT19lJq
+-- \unrestrict dlGxm5vhPkgsazZBd0I1hMfJLiJbZvNGgS4POqUoEcBFTQ1NKY0GaOSnecF3ziy
 
 RESET ALL;
