@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict DIOrSgVQRwl7996Y9a7eFxLwrR5CzWTsTSJlrRNTCRq1PiWTuxZ2Uy96HB8uI7A
+-- \restrict FHUw3b9pqRcla2ZhYbvcR7lqe9a7YAYt5nCBzVfsq0oPnx6ocgacnfB73ulcOAL
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.11
@@ -229,6 +229,8 @@ COPY "auth"."audit_log_entries" ("instance_id", "id", "payload", "created_at", "
 00000000-0000-0000-0000-000000000000	42f4a012-0510-4748-9fe7-d880246c1043	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-10-09 11:32:54.509179+00	
 00000000-0000-0000-0000-000000000000	f60f85ed-fd50-4c3d-9441-c8992c965e24	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-10-21 20:23:17.422521+00	
 00000000-0000-0000-0000-000000000000	e48520f3-9e1f-429c-b470-b5463bcaa5f7	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-10-21 20:23:17.439804+00	
+00000000-0000-0000-0000-000000000000	1aca6923-ff21-4159-8187-43746ef37f6b	{"action":"token_refreshed","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-11-05 15:43:05.950014+00	
+00000000-0000-0000-0000-000000000000	c51fd711-ee7b-4910-b281-aedd15d64605	{"action":"token_revoked","actor_id":"2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2","actor_username":"titasss4@gmail.com","actor_via_sso":false,"log_type":"token"}	2026-11-05 15:43:05.980174+00	
 \.
 
 
@@ -253,7 +255,7 @@ COPY "auth"."flow_state" ("id", "user_id", "auth_code", "code_challenge_method",
 --
 
 COPY "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") FROM stdin;
-00000000-0000-0000-0000-000000000000	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	authenticated	authenticated	titasss4@gmail.com	$2a$10$IFpL2qraCr20yVXXcO5JLe3tw2byH5unGIbUKb/DONMyC.uXbunz6	2025-10-03 22:03:47.214876+00	\N		\N		\N			\N	2025-12-10 09:13:47.591512+00	{"provider": "email", "providers": ["email"]}	{"email_verified": true}	\N	2025-10-03 22:03:47.143765+00	2026-10-21 20:23:17.470491+00	\N	\N			\N		0	\N		\N	f	\N	f
+00000000-0000-0000-0000-000000000000	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	authenticated	authenticated	titasss4@gmail.com	$2a$10$IFpL2qraCr20yVXXcO5JLe3tw2byH5unGIbUKb/DONMyC.uXbunz6	2025-10-03 22:03:47.214876+00	\N		\N		\N			\N	2025-12-10 09:13:47.591512+00	{"provider": "email", "providers": ["email"]}	{"email_verified": true}	\N	2025-10-03 22:03:47.143765+00	2026-11-05 15:43:06.014278+00	\N	\N			\N		0	\N		\N	f	\N	f
 \.
 
 
@@ -289,7 +291,7 @@ COPY "auth"."oauth_clients" ("id", "client_secret_hash", "registration_type", "r
 COPY "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag", "oauth_client_id", "refresh_token_hmac_key", "refresh_token_counter", "scopes") FROM stdin;
 7c54a82d-c6e4-47e1-9eab-1e6896a64c75	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:42.985425+00	2025-12-09 18:40:22.346443+00	\N	aal1	\N	2025-12-09 18:40:22.346331	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
 a3945cee-9d10-48db-8979-ef3111fba513	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 09:13:47.592206+00	2025-12-10 09:13:47.592206+00	\N	aal1	\N	\N	Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36	86.139.36.119	\N	\N	\N	\N	\N
-e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 00:29:23.189307+00	2026-10-21 20:23:17.479898+00	\N	aal1	\N	2026-10-21 20:23:17.479796	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36	188.69.71.199	\N	\N	\N	\N	\N
+e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-10 00:29:23.189307+00	2026-11-05 15:43:06.028247+00	\N	aal1	\N	2026-11-05 15:43:06.028141	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36	188.69.155.41	\N	\N	\N	\N	\N
 e8148c67-4637-43db-b31e-453b3c566b1a	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	2025-12-08 22:35:35.362462+00	2026-09-12 08:51:53.852356+00	\N	aal1	\N	2026-09-12 08:51:53.852267	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36	188.69.59.141	\N	\N	\N	\N	\N
 \.
 
@@ -419,7 +421,8 @@ COPY "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked"
 00000000-0000-0000-0000-000000000000	101	afer63c5be2i	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-16 04:29:01.347013+00	2026-09-18 18:41:49.748229+00	mjmdc4bllwp5	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 00000000-0000-0000-0000-000000000000	102	doptb4ubp443	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-09-18 18:41:49.771212+00	2026-10-09 11:32:54.514998+00	afer63c5be2i	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 00000000-0000-0000-0000-000000000000	103	go4zag43oky2	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-10-09 11:32:54.534376+00	2026-10-21 20:23:17.441143+00	doptb4ubp443	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
-00000000-0000-0000-0000-000000000000	104	3ugrk37q5oag	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-10-21 20:23:17.458708+00	2026-10-21 20:23:17.458708+00	go4zag43oky2	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	104	3ugrk37q5oag	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	t	2026-10-21 20:23:17.458708+00	2026-11-05 15:43:05.980891+00	go4zag43oky2	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
+00000000-0000-0000-0000-000000000000	105	4idf44q3l5tf	2ebb9bb3-a2a7-47e4-95d8-cc3d118734a2	f	2026-11-05 15:43:06.005845+00	2026-11-05 15:43:06.005845+00	3ugrk37q5oag	e0b5b17b-ace0-4ba3-bd61-57d58bd1e31f
 \.
 
 
@@ -637,6 +640,14 @@ game-files	game-files	\N	2025-12-04 22:34:59.459986+00	2025-12-04 22:34:59.45998
 
 
 --
+-- Data for Name: bucket_lifecycle_states; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
+--
+
+COPY "storage"."bucket_lifecycle_states" ("bucket_id", "generation", "next_run_at", "claim_id", "claim_until", "continuation", "last_started_at", "last_completed_at", "last_success_at", "last_result", "failure_count", "last_error", "updated_at") FROM stdin;
+\.
+
+
+--
 -- Data for Name: buckets_analytics; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -649,6 +660,14 @@ COPY "storage"."buckets_analytics" ("name", "type", "format", "created_at", "upd
 --
 
 COPY "storage"."buckets_vectors" ("id", "type", "created_at", "updated_at") FROM stdin;
+\.
+
+
+--
+-- Data for Name: lifecycle_abandoned_artifacts; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
+--
+
+COPY "storage"."lifecycle_abandoned_artifacts" ("bucket_id", "key", "name", "version", "attempted_at") FROM stdin;
 \.
 
 
@@ -741,13 +760,13 @@ COPY "storage"."vector_indexes" ("id", "name", "bucket_id", "data_type", "dimens
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 104, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 105, true);
 
 
 --
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict DIOrSgVQRwl7996Y9a7eFxLwrR5CzWTsTSJlrRNTCRq1PiWTuxZ2Uy96HB8uI7A
+-- \unrestrict FHUw3b9pqRcla2ZhYbvcR7lqe9a7YAYt5nCBzVfsq0oPnx6ocgacnfB73ulcOAL
 
 RESET ALL;
